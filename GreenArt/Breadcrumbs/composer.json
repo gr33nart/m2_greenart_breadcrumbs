@@ -1,0 +1,28 @@
+{
+    "name": "gr33nart/m2_greenart_breadcrumbs",
+    "description": "Extend Breadcrumbs functionality",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Stefan Iurasog",
+            "email": "office@green-art.ro"
+        }
+    ],
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/module-theme": "100.*"
+    },
+    "version": "1.0.1",
+    "autoload": {
+        "psr-4": {
+            "GreenArt\\Breadcrumbs\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

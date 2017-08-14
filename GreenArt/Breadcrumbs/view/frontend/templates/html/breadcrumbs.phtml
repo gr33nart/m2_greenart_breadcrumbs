@@ -1,0 +1,39 @@
+<?php
+/**
+ * GreenArt_Breadcrumbs extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE_EASYLIFE_BREADCRUMBS.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category       GreenArt
+ * @package        GreenArt_Breadcrumbs
+ * @author         Stefan Iurasog
+ * @email          office[at]green-art.ro
+ * @copyright      Copyright (c) 2017
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+?>
+<?php if ($crumbs && is_array($crumbs)) : ?>
+<div class="breadcrumbs">
+	<pre>Here you can extend Breadcrumbs</pre>
+    <ul class="items">
+        <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+            <li class="item <?php /* @escapeNotVerified */ echo $crumbName ?>">
+            <?php if ($crumbInfo['link']) : ?>
+                <a href="<?php /* @escapeNotVerified */ echo $crumbInfo['link'] ?>" title="<?php echo $block->escapeHtml($crumbInfo['title']) ?>">
+                    <?php echo $block->escapeHtml($crumbInfo['label']) ?>
+                </a>
+            <?php elseif ($crumbInfo['last']) : ?>
+                <strong><?php echo $block->escapeHtml($crumbInfo['label']) ?></strong>
+            <?php else: ?>
+                <?php echo $block->escapeHtml($crumbInfo['label']) ?>
+            <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
